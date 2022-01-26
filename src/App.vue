@@ -43,6 +43,12 @@
                   <v-list-item-title>Accesos</v-list-item-title>
                 </v-list-item-content>
             </template>
+            <v-list-item :to="{ path: 'perfil'}">
+              <v-list-item-title>Perfil</v-list-item-title>
+              <v-list-item-icon>
+                <v-icon>people</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
             <v-list-item :to="{ path: 'listarUsuario'}">
               <v-list-item-title>Usuarios</v-list-item-title>
               <v-list-item-icon>
@@ -61,17 +67,17 @@
           <v-list-group :value="false" prepend-icon="domain">
             <template v-slot:activator>
               <v-list-item-content>
-                  <v-list-item-title>Almacen</v-list-item-title>
+                  <v-list-item-title>Lineas de investigación</v-list-item-title>
                 </v-list-item-content>
             </template>
             <v-list-item :to="{ path: 'Categoria'}">
-              <v-list-item-title>Categorías</v-list-item-title>
+              <v-list-item-title>Docentes por lineas de investigación</v-list-item-title>
               <v-list-item-icon>
                 <v-icon>category</v-icon>
               </v-list-item-icon>
             </v-list-item>
             <v-list-item :to="{ path: 'Productos'}">
-              <v-list-item-title>Productos</v-list-item-title>
+              <v-list-item-title>Herramientas para el prácticante</v-list-item-title>
               <v-list-item-icon>
                 <v-icon>fence</v-icon>
               </v-list-item-icon>
@@ -82,17 +88,11 @@
           <v-list-group :value="false" prepend-icon="add_shopping_cart">
             <template v-slot:activator>
               <v-list-item-content>
-                  <v-list-item-title>Compras</v-list-item-title>
+                  <v-list-item-title>Repositorio de practicas</v-list-item-title>
                 </v-list-item-content>
             </template>
             <v-list-item :to="{ path: 'Ejemplo_03'}">
-              <v-list-item-title>Sub-modulo-3</v-list-item-title>
-              <v-list-item-icon>
-                <v-icon>wb_iridescent</v-icon>
-              </v-list-item-icon>
-            </v-list-item>
-            <v-list-item :to="{ path: 'Ejemplo_04'}">
-              <v-list-item-title>Sub-modulo-3</v-list-item-title>
+              <v-list-item-title>Repositorios</v-list-item-title>
               <v-list-item-icon>
                 <v-icon>wb_iridescent</v-icon>
               </v-list-item-icon>
@@ -103,17 +103,17 @@
           <v-list-group :value="false" prepend-icon="price_change">
             <template v-slot:activator>
               <v-list-item-content>
-                  <v-list-item-title>Ventas</v-list-item-title>
+                  <v-list-item-title>Contactos</v-list-item-title>
                 </v-list-item-content>
             </template>
             <v-list-item :to="{ path: 'Ejemplo_05'}">
-              <v-list-item-title>Sub-modulo-4</v-list-item-title>
+              <v-list-item-title>correo electronico</v-list-item-title>
               <v-list-item-icon>
                 <v-icon>wb_iridescent</v-icon>
               </v-list-item-icon>
             </v-list-item>
             <v-list-item :to="{ path: 'Ejemplo_06'}">
-              <v-list-item-title>Sub-modulo-4</v-list-item-title>
+              <v-list-item-title>Telefonos</v-list-item-title>
               <v-list-item-icon>
                 <v-icon>wb_iridescent</v-icon>
               </v-list-item-icon>
@@ -138,7 +138,7 @@
           class="primary lighten py-4 text-center white--text"
           cols="top"
         >
-          {{ new Date().getFullYear() }} — <strong>Footer</strong>
+          {{ new Date().getFullYear() }} — <strong>Escuela Profesional de Arte</strong>
         </v-col>
       </v-row>
     </v-footer>

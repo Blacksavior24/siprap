@@ -8,7 +8,7 @@ const purchasePrice = Joi.number().precision(2);
 const salePrice = Joi.number().precision(2);
 const categoryId = Joi.number().integer();
 
-const createProductSchema = Joi.object({
+const createReportSchema = Joi.object({
   name: name.required(),
   code: code.required(),
   description: description.required(),
@@ -17,7 +17,7 @@ const createProductSchema = Joi.object({
   categoryId: categoryId.required(),
 });
 
-const updateProductSchema = Joi.object({
+const updateReportSchema = Joi.object({
   name: name,
   description: description,
   purchasePrice: purchasePrice,
@@ -25,8 +25,8 @@ const updateProductSchema = Joi.object({
   categoryId: categoryId
 });
 
-const getProductSchema = Joi.object({
+const getReportSchema = Joi.object({
   id: id.required(),
 });
 
-module.exports = { createProductSchema, updateProductSchema, getProductSchema }
+module.exports = { createReportSchema, updateReportSchema, getReportSchema }

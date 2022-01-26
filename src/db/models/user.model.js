@@ -9,43 +9,19 @@ const UserSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  user:{
-    allowNull: false,
-    type: DataTypes.STRING,
-    unique: true
-  },
-  fullname:{
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  typeIDcard:{
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  IDcard:{
-    allowNull: false,
-    type: DataTypes.STRING
-  },
   email:{
     allowNull: false,
     type: DataTypes.STRING,
     unique: true,
   },
+  password: {
+    allowNull: false,
+    type: DataTypes.STRING
+  },
   role:{
     allowNull: false,
-    type: DataTypes.STRING
-  },
-  phone: {
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  password:{
-    allowNull: false,
-    type: DataTypes.STRING
-  },
-  status:{
-    allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    defaultValue: 'customer'
   },
   createdAt:{
     allowNull: false,
@@ -55,10 +31,12 @@ const UserSchema = {
   }
 }
 
-
 class User extends Model{
-  static associate(){
-    //associate
+  static associate(models){
+    this.hasOne(models.Customer,{
+      as: 'customer',
+      foreignKey: 'userId'
+    });
   }
   static config(sequelize){
     return{
