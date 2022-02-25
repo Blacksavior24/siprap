@@ -3,7 +3,7 @@
       <v-layout justify-center>
           <v-flex>
               <v-toolbar flat>
-                  <v-toolbar-title>Productos</v-toolbar-title>
+                  <v-toolbar-title>Herramientas</v-toolbar-title>
                   <v-divider class="mx-2" inset vertical></v-divider>
                   <v-spacer></v-spacer>
                   <v-text-field class="text-xs-center" v-model="search" append-icon="search" label="Búsqueda" single-line hide-details></v-text-field>
@@ -29,12 +29,6 @@
                                   </v-flex>
                                   <v-flex xs6 sm6 md6>
                                       <v-text-field v-model="descripcion_producto" label="Descripción"></v-text-field>
-                                  </v-flex>
-                                  <v-flex xs6 sm6 md6>
-                                      <v-text-field type="number" v-model="precioC_producto" label="Precio compra"></v-text-field>
-                                  </v-flex>
-                                  <v-flex xs6 sm6 md6>
-                                      <v-text-field type="number" v-model="precioV_producto" label="Precio venta"></v-text-field>
                                   </v-flex>
                                   <v-flex xs12 sm12 md12 v-show="valida">
                                       <div class="red--text" v-for="v in valida_Mensaje" :key="v" v-text="v"></div>

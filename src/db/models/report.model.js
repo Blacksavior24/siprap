@@ -2,7 +2,7 @@ const { datatype } = require('faker');
 const { Model, DataTypes, Sequelize} = require('sequelize');
 const REPORT_TABLE = 'reports';
 
-const OrderSchema = {
+const ReportSchema = {
   id:{
     allowNull: false,
     autoIncrement: true,
@@ -40,7 +40,7 @@ const OrderSchema = {
   },
 }
 
-class Order extends Model{
+class Report extends Model{
   static associate(models){
     this.belongsTo(models.Customer,{
       as: 'customer',
@@ -62,4 +62,4 @@ class Order extends Model{
   }
 }
 
-module.exports = {Order, OrderSchema, ORDER_TABLE};
+module.exports = {REPORT_TABLE,ReportSchema,Report};
