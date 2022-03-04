@@ -9,6 +9,18 @@ const UserSchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
+  name: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  lastName:{
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  dni:{
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
   email:{
     allowNull: false,
     type: DataTypes.STRING,
@@ -16,12 +28,16 @@ const UserSchema = {
   },
   password: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
   },
   role:{
     allowNull: false,
     type: DataTypes.STRING,
-    defaultValue: 'customer'
+    defaultValue: 'student'
+  },
+  phone:{
+    allowNull: false,
+    type: DataTypes.STRING,
   },
   createdAt:{
     allowNull: false,
@@ -33,8 +49,16 @@ const UserSchema = {
 
 class User extends Model{
   static associate(models){
-    this.hasOne(models.Customer,{
-      as: 'customer',
+    this.hasOne(models.Student,{
+      as: 'student',
+      foreignKey: 'userId'
+    });
+    this.hasOne(models.Teacher,{
+      as: 'teacher',
+      foreignKey: 'userId'
+    });
+    this.hasOne(models.Admin,{
+      as: 'admin',
       foreignKey: 'userId'
     });
   }

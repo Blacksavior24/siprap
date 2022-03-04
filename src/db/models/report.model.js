@@ -1,5 +1,9 @@
-const { datatype } = require('faker');
 const { Model, DataTypes, Sequelize} = require('sequelize');
+
+const {STUDENT_TABLE} = require('./student.model');
+const {TEACHER_TABLE } = require('./teacher.model');
+const {CATEGORY_TABLE} = require('./category.model');
+
 const REPORT_TABLE = 'reports';
 
 const ReportSchema = {
@@ -15,18 +19,48 @@ const ReportSchema = {
   },
   resume:{
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.TEXT
   },
   state:{
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.INTEGER
   },
-  customerId:{
-    field: 'customer_id',
+  title:{
+    allowNull:false,
+    type: DataTypes.TEXT
+  },
+  keywords:{
+    allowNull:false,
+    type: DataTypes.TEXT
+  },
+  studentId:{
+    field: 'student_id',
     allowNull: false,
     type: DataTypes.INTEGER,
     references: {
-      model: CUSTOMER_TABLE,
+      model: STUDENT_TABLE,
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
+  },
+  categoryId:{
+    field: 'category_id',
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    references: {
+      model: CATEGORY_TABLE,
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
+  },
+  teacherId:{
+    field: 'teacher_id',
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    references: {
+      model: TEACHER_TABLE,
       key: 'id'
     },
     onUpdate: 'CASCADE',
@@ -42,21 +76,21 @@ const ReportSchema = {
 
 class Report extends Model{
   static associate(models){
-    this.belongsTo(models.Customer,{
-      as: 'customer',
+    this.belongsTo(models.Category,{
+      as: 'category',
     });
-    this.belongsToMany(models.Product,{
-      as: 'items',
-      through: models.OrderProduct,
-      foreignKey: 'orderId',
-      otherKey: 'productId'
-    })
+    this.belongsTo(models.Student,{
+      as: 'student',
+    });
+    this.belongsTo(models.Teacher,{
+      as: 'teacher',
+    });
   }
   static config(sequelize){
     return{
       sequelize,
-      tableName: ORDER_TABLE,
-      modelName: 'Order',
+      tableName: REPORT_TABLE,
+      modelName: 'Report',
       timestamps: false
     }
   }
