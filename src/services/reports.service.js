@@ -2,70 +2,70 @@ const boom = require('@hapi/boom');
 
 const {models} = require('./../libs/sequelize');
 
-class ReportsService {
+class ReportService {
 
   constructor(){
   }
 
   async create(data) {
-    const newProduct = await models.Product.create(data);
-    return newProduct;
+    const newReport = await models.Report.create(data);
+    return newReport;
   }
 
   async find() {
-    const products = await models.Product.findAll({
+    const Reports = await models.Report.findAll({
       include: ['category']
     });
-    return products;
+    return Reports;
   }
 
   async findOne(id) {
-    const product = await models.Product.findByPk(id);
-    if(!product){
-      throw boom.notFound('product no encontrado');
+    const Report = await models.Report.findByPk(id);
+    if(!Report){
+      throw boom.notFound('Informe no encontrado');
     }
-    return product;
+    return Report;
     /*
-    const product = this.products.find(item => item.id === id);
-    if (!product) {
-      throw boom.notFound('product not found');
+    const Report = this.Reports.find(item => item.id === id);
+    if (!Report) {
+      throw boom.notFound('Report not found');
     }
-    if (product.isBlock) {
-      throw boom.conflict('product is block');
+    if (Report.isBlock) {
+      throw boom.conflict('Report is block');
     }
-    return product;*/
+    return Report;*/
   }
 
   async update(id, changes) {
-    const product = await this.findOne(id);
-    const rta = await product.update(changes);
+    const Report = await this.findOne(id);
+    const rta = await Report.update(changes);
     return rta;
     /*
-    const index = this.products.findIndex(item => item.id === id);
+    const index = this.Reports.findIndex(item => item.id === id);
     if (index === -1) {
-      throw boom.notFound('product not found');
+      throw boom.notFound('Report not found');
     }
-    const product = this.products[index];
-    this.products[index] = {
-      ...product,
+    const Report = this.Reports[index];
+    this.Reports[index] = {
+      ...Report,
       ...changes
     };
-    return this.products[index];*/
+    return this.Reports[index];*/
   }
 
   async delete(id) {
-    const product = await this.findOne(id);
-    await product.destroy();
+    const Report = await this.findOne(id);
+    await Report.destroy();
     return { id };
     /*
-    const index = this.products.findIndex(item => item.id === id);
+    const index = this.Reports.findIndex(item => item.id === id);
     if (index === -1) {
-      throw boom.notFound('product not found');
+      throw boom.notFound('Report not found');
     }
-    this.products.splice(index, 1);
+    this.Reports.splice(index, 1);
     return { id };*/
   }
 
 }
 
-module.exports = ReportsService;
+module.exports = ReportService;
