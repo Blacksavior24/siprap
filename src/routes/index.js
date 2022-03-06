@@ -12,7 +12,7 @@ function routerApi(app) {
   router.use('/users', usersRouter);
   router.use('/reports', reportsRouter);
   router.use('/categories', categoriesRouter);
-  router.use('/inventory', inventoryRouter);
+  //router.use('/inventory', inventoryRouter);
   //router.use('/orders', orderRouter);
 }
 

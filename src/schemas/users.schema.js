@@ -2,38 +2,32 @@ const Joi = require('joi');
 
 const id = Joi.number().integer();
 const email = Joi.string().email();
-const password = Joi.string().min(8);
-const user = Joi.string();
-const fullname = Joi.string();
-const typeIDcard = Joi.string();
-const IDcard = Joi.string();
+const password = Joi.string().min(6);
+const name = Joi.string();
+const lastName = Joi.string();
+const dni = Joi.string();
 const role = Joi.string();
 const phone = Joi.string();
-const status = Joi.string();
 
 const createUserSchema = Joi.object({
   //id: id.required(),
-  user: user.required(),
-  fullname: fullname.required(),
-  typeIDcard: typeIDcard.required(),
-  IDcard: IDcard.required(),
+  name: name.required(),
+  lastName: lastName.required(),
   email: email.required(),
+  password: password.required(),
+  dni: dni.required(),  
   role: role.required(),
   phone: phone.required(),
-  password: password.required(),
-  status: status.required()
 });
 
 const updateUserSchema = Joi.object({
-  user: user,
-  fullname: fullname,
-  typeIDcard: typeIDcard,
-  IDcard: IDcard,
+  name: name,
+  lastName: lastName,
   email: email,
-  role: role,
-  phone: phone,
   password: password,
-  status: status
+  dni: dni,  
+  role: role,
+  phone: phone
 });
 
 const getUserSchema = Joi.object({
