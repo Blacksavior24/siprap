@@ -21,19 +21,14 @@ const options = {
 */
 app.use(cors());
 
-app.get('/', (req, res)=>{
-  res.send('hola mi server');
-});
-
-app.get('/nueva-ruta', (req, res)=>{
-  res.send('hola soy nueva ruta');
-});
 
 routerApi(app);
 
 app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
+
+app.use(express.static('frontend'));
 
 app.listen(port, ()=>{
   console.log('mi port'+ port);
