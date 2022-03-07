@@ -10,15 +10,18 @@
   <h1>Hola soy el front</h1>
   <h2 id="nombre">nombre</h2>
   <h2 id="email">email</h2>
+  <h2 id="xd">adfa</h2>
   <script>
     const nombre = document.getElementById('nombre');
     const email = document.getElementById('email'); 
+    const xd = document.getElementById('xd');
     (async ()=> {
       const response = await fetch('http://localhost:3000/api/v1/users/1');
       const data = await response.json();
       console.log(data);
       nombre.innerHTML = data.name;
       email.innerHTML = data.email;
+      xd.innerHTML = data.role;
     })();
   </script>
 </body>
