@@ -4,6 +4,9 @@ const categoriesRouter = require('./categories.router');
 const usersRouter = require('./users.router');
 const reportsRouter = require('./reports.router');
 const studentsRouter = require('./students.router');
+//const router = express.Router();
+//frontend
+//const front = require('./front');
 
 function routerApi(app) {
   const router = express.Router();
