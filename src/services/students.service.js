@@ -8,17 +8,19 @@ class StudentService {
   
   }
   async create(data) {
-    const hash = await bcrypt.hash(data.password, 10);
-    const newStudent = await models.Student.create({
-      ...data,
-      password: hash
+    //const hash = await bcrypt.hash(data.password, 10);
+    const newStudent = await models.Student.create(data,{
+      //password: hash,
+      include: ['user']
     });
     delete newStudent.dataValues.password;
     return newStudent;
   }
 
   async find() {
-    const rta = await models.Student.findAll();
+    const rta = await models.Student.findAll({
+      include: ['user']
+    });
     return rta;
   }
 
@@ -31,11 +33,11 @@ class StudentService {
   }
 
   async update(id, changes) {
-    const hash = await bcrypt.hash(changes.password, 10);
+    //const hash = await bcrypt.hash(changes.password, 10);
     const Student = await this.findOne(id);
     const rta = await Student.update({
       ...changes,
-      password: hash
+      //password: hash
     });
     delete rta.dataValues.password;
     return rta;
