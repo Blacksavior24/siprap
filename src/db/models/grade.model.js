@@ -10,7 +10,10 @@ const GradeSchema = {
   },
   name:{
     type: DataTypes.STRING,
-    unique: true,
+    allowNull: false,
+  },
+  fecha:{
+    type: DataTypes.STRING,
     allowNull: false,
   },
   createdAt:{
