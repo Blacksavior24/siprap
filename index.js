@@ -36,6 +36,36 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'First Web Node' });
 });
 
+app.get('/main', (req, res) => {
+  console.log('nueva ruta');
+  res.render('main');
+});
+
+app.get('/profile', (req, res) => {
+  console.log('nueva ruta');
+  res.render('profile');
+});
+
+app.get('/lineasdeinvestigacion', (req, res) => {
+  console.log('nueva ruta');
+  res.render('lineasdeinvestigacion');
+});
+
+app.get('/informes', (req, res) => {
+  console.log('nueva ruta');
+  res.render('informes');
+});
+
+app.get('/repositorio', (req, res) => {
+  console.log('nueva ruta');
+  res.render('repositorio');
+});
+
+app.get('/herramientas', (req, res) => {
+  console.log('nueva ruta');
+  res.render('herramientas');
+});
+
 //DOCENTES
 
 

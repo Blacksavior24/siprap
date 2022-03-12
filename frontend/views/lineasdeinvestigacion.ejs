@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include ('partials/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include ('partials/navbar.ejs') %>
+
+    <main class="mt-auto pt-1">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10 mt-5 pt-5">
+              <div class="col row z-depth-3 rounded">
+                <div class="col-sm-11 bg-white rounded-right me-auto ms-auto">
+                  <h3 class="mt-3 text-center">Líneas de Investigacion</h3>
+                  <div class="row p-1">
+                    <p class="font-weight-bold text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Doloribus enim
+                      voluptatem iure. Aut voluptatum molestiae est unde impedit animi modi, accusantium voluptatem
+                      excepturi. Molestias aut accusamus deserunt architecto facilis et.</p>
+                  </div>
+                  <hr class="bg-firstColor">
+    
+                  <div class="d-grid gap-2">
+                    <a class="btn bg-thirdColor text-white" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+                      aria-expanded="false" aria-controls="multiCollapseExample1">Primera Linea de Investigacion</a>
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                          <ul class="list-group list-group-flush">
+    
+                            <li class="list-group-item">Item</li>
+                            <li class="list-group-item">Item</li>
+                            <li class="list-group-item">Item</li>
+                            <li class="list-group-item">Item</li>
+                            
+                          </ul> 
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+    
+    
+                  <hr class="bg-firstColor">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!-- top navigation bar -->
+<nav class="navbar navbar-expand-lg bg-firstColor fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+        aria-controls="offcanvasExample">
+        <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+      </button>
+      <a class="navbar-yellow me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="/main"><img src="/img/siprap.png" width="35px"
+          alt="">SIPRAP</a>
+
+      <div id="topNavBar">
+        <ul class="navbar-nav">
+          <li>
+            <a class="nav-link ms-2">
+              <ion-icon name="log-out-outline"></ion-icon>
+              Cerrar Sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- top navigation bar -->
+  <!-- offcanvas -->
+  <div class="offcanvas offcanvas-start sidebar-nav bg-firstColor p-4" tabindex="-1" id="sidebar">
+    <div class="offcanvas-body p-0">
+      <nav class="navbar-dark">
+        <ul class="navbar-nav">
+          <li class="my-4">
+            <hr class="dropdown-divider bg-light" />
+          </li>
+          <li>
+            <a href="/main" class="nav-link px-3 active">
+              <span class="me-2">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li>
+            <a href="/profile" class="nav-link px-3 active">
+              <span class="me-2">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span>Perfil</span>
+            </a>
+          </li>
+          <li class="my-4">
+            <hr class="dropdown-divider bg-light" />
+          </li>
+          <li>
+            <a href="/lineasdeinvestigacion" class="nav-link px-3">
+              <span class="me-2">
+                <ion-icon name="list-outline"></ion-icon>
+              </span>
+              <span>Lineas de Investigación</span>
+            </a>
+          </li>
+          <li>
+            <a href="/informes" class="nav-link px-3">
+              <span class="me-2">
+                <ion-icon name="book-outline"></ion-icon>
+              </span>
+              <span>Informes</span>
+            </a>
+          </li>
+          <li>
+            <a href="/repositorio" class="nav-link px-3">
+              <span class="me-2">
+                <ion-icon name="library-outline"></ion-icon>
+              </span>
+              <span>Repositorio</span>
+            </a>
+          </li>
+          <li class="my-4">
+            <hr class="dropdown-divider bg-light" />
+          </li>
+          <li>
+            <a href="/herramientas" class="nav-link px-3">
+              <span class="me-2">
+                <ion-icon name="construct-outline"></ion-icon>
+              </span>
+              <span>Herramientas</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link px-3">
+              <span class="me-2">
+                <ion-icon name="mail-outline"></ion-icon>
+              </span>
+              <span>Contacto</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- offcanvas -->
