@@ -1,5 +1,5 @@
 const Joi = require('joi');
-
+//lineas
 const id = Joi.number().integer();
 const name = Joi.string().min(3);
 const description = Joi.string().min(5);

@@ -56,7 +56,8 @@ class Teacher extends Model{
     this.hasMany(models.Report,{
         as: 'reports',
         foreignKey: 'teacherId'
-      });
+    });
+    this.belongsTo(models.Grade, {as: 'grade'});
   }
   static config(sequelize){
     return{
