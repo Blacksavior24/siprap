@@ -8,12 +8,19 @@ class TeacherService {
   
   }
   async create(data) {
-    const hash = await bcrypt.hash(data.password, 10);
-    const newTeacher = await models.Teacher.create({
+    const hash = await bcrypt.hash(data.user.password, 10);
+    const newData = {
       ...data,
-      password: hash
+      user:{
+        ...data.user,
+        password: hash
+      }
+    }
+    const newTeacher = await models.Teacher.create(newData,{
+      include:['user'],
+      include:['grade']
     });
-    delete newTeacher.dataValues.password;
+    delete newTeacher.dataValues.user.dataValues.password;
     return newTeacher;
   }
 
@@ -31,13 +38,19 @@ class TeacherService {
   }
 
   async update(id, changes) {
-    const hash = await bcrypt.hash(changes.password, 10);
-    const Teacher = await this.findOne(id);
-    const rta = await Teacher.update({
+    const hash = await bcrypt.hash(changes.user.password, 10);
+    const upTeacher = {
       ...changes,
-      password: hash
+      user:{
+        ...changes.user,
+        password: hash
+      }
+    }
+    const Teacher = await this.findOne(id);
+    const rta = await Teacher.update(upTeacher,{
+      include: ['user']
     });
-    delete rta.dataValues.password;
+    delete rta.dataValues.user.dataValues.password;
     return rta;
   }
 

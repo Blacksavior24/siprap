@@ -8,12 +8,18 @@ class AdminService {
   
   }
   async create(data) {
-    const hash = await bcrypt.hash(data.password, 10);
-    const newAdmin = await models.Admin.create({
+    const hash = await bcrypt.hash(data.user.password, 10);
+    const newData ={
       ...data,
-      password: hash
+      user:{
+        ...data.user,
+        password:hash
+      }
+    }
+    const newAdmin = await models.Admin.create({
+      include: ['user']
     });
-    delete newAdmin.dataValues.password;
+    delete newAdmin.dataValues.user.dataValues.password;
     return newAdmin;
   }
 
@@ -31,13 +37,19 @@ class AdminService {
   }
 
   async update(id, changes) {
-    const hash = await bcrypt.hash(changes.password, 10);
-    const Admin = await this.findOne(id);
-    const rta = await Admin.update({
+    const hash = await bcrypt.hash(changes.user.password, 10);
+    const upAdmin = {
       ...changes,
-      password: hash
+      user:{
+        ...changes.user,
+        password: hash
+      }
+    }
+    const Admin = await this.findOne(id);
+    const rta = await Admin.update(upAdmin,{
+      include: ['user']
     });
-    delete rta.dataValues.password;
+    delete rta.dataValues.user.dataValues.password;
     return rta;
   }
 

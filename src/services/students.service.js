@@ -8,15 +8,21 @@ class StudentService {
   
   }
   async create(data) {
-    //const hash = await bcrypt.hash(data.password, 10);
-    const newStudent = await models.Student.create(data,{
-      //password: hash,
+    const hash = await bcrypt.hash(data.user.password, 10);
+    const newData = {
+      ...data,
+      user:{
+        ...data.user,
+        password: hash
+      }
+    }
+    const newStudent = await models.Student.create(newData,{
       include: ['user']
     });
-    delete newStudent.dataValues.password;
+    delete newStudent.dataValues.user.dataValues.password;
     return newStudent;
   }
-
+  
   async find() {
     const rta = await models.Student.findAll({
       include: ['user']
@@ -25,7 +31,9 @@ class StudentService {
   }
 
   async findOne(id) {
-    const Student = await models.Student.findByPk(id);
+    const Student = await models.Student.findByPk(id,{
+      include: ['user']
+    });
     if(!Student){
       throw boom.notFound('Student not found');
     }
@@ -33,13 +41,19 @@ class StudentService {
   }
 
   async update(id, changes) {
-    //const hash = await bcrypt.hash(changes.password, 10);
-    const Student = await this.findOne(id);
-    const rta = await Student.update({
+    const hash = await bcrypt.hash(changes.user.password, 10);
+    const upStudent = {
       ...changes,
-      //password: hash
+      user:{
+        ...changes.user,
+        password: hash
+      }
+    }
+    const Student = await this.findOne(id);
+    const rta = await Student.update(upStudent,{
+      include: ['user']
     });
-    delete rta.dataValues.password;
+    delete rta.dataValues.user.dataValues.password;
     return rta;
   }
 
