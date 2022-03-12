@@ -26,6 +26,8 @@ const options = {
 */
 app.use(cors());
 
+require('./src/utils/auth');
+
 //app.use(router);
 
 //INICIO

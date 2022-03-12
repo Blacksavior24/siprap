@@ -17,8 +17,7 @@ class TeacherService {
       }
     }
     const newTeacher = await models.Teacher.create(newData,{
-      include:['user'],
-      include:['grade']
+      include:['user']
     });
     delete newTeacher.dataValues.user.dataValues.password;
     return newTeacher;

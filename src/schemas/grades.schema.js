@@ -1,20 +1,20 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const contact = Joi.string();
-const contact2 = Joi.string();
+const name = Joi.string();
+const fecha = Joi.string();
 
 const getGradeSchema = Joi.object({
   id: id.required(),
 });
 const createGradeSchema = Joi.object({
-  contact: contact.required(),
-  contact2: contact2.required(),
+  name: name.required(),
+  fecha: fecha.required(),
 });
   
 const updateGradeSchema = Joi.object({
-  contact,
-  contact2,
+  name,
+  fecha,
 });
   
 module.exports = { getGradeSchema, createGradeSchema, updateGradeSchema };
