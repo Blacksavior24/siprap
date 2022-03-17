@@ -3,6 +3,10 @@
 - Es creado con nodejs, express, vuejs y postgres.
 - Algunas formas de correr los datos del docker para la conexión se obtendrá en está lectura.
 
+# Error de contenido por arreglar
+
+- Docentes con grados se quitarán hasta una nueva versión
+
 # Corriendo  .env
 
 Crean el archivo .env tal como se coloca en .env.example

@@ -1,28 +1,35 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const name = Joi.string().min(3);
-const code = Joi.string().max(13);
-const description = Joi.string().min(5);
-const purchasePrice = Joi.number().precision(2);
-const salePrice = Joi.number().precision(2);
+const file = Joi.string();
+const resume = Joi.string();
+const state = Joi.string();
+const title = Joi.string();
+const keywords = Joi.string();
+const studentId = Joi.number().integer();
 const categoryId = Joi.number().integer();
+const teacherId = Joi.number().integer();
 
 const createReportSchema = Joi.object({
-  name: name.required(),
-  code: code.required(),
-  description: description.required(),
-  purchasePrice: purchasePrice.required(),
-  salePrice: salePrice.required(),
+  file: file.required(),
+  resume: resume.required(),
+  state: state.required(),
+  title: title.required(),
+  keywords: keywords.required(),
+  studentId: studentId.required(),
   categoryId: categoryId.required(),
+  teacherId: teacherId.required()
 });
 
 const updateReportSchema = Joi.object({
-  name: name,
-  description: description,
-  purchasePrice: purchasePrice,
-  salePrice: salePrice,
-  categoryId: categoryId
+  file: file,
+  resume: resume,
+  state: state,
+  title: title,
+  keywords: keywords,
+  studentId: studentId,
+  categoryId: categoryId,
+  teacherId: teacherId,
 });
 
 const getReportSchema = Joi.object({

@@ -2,7 +2,7 @@ const express = require('express');
 
 const CategoryService = require('./../services/categories.service');
 const validatorHandler = require('./../middlewares/validator.handler');
-const {updateCategorySchema, createCategorySchema, getCategorySchema} = require('./../schemas/categories.schema');
+const {updateCategorySchema, createCategorySchema, getCategorySchema, addLineTeacherSchema} = require('./../schemas/categories.schema');
 
 const router = express.Router();
 const service = new CategoryService();
@@ -41,6 +41,20 @@ router.post('/',
     }
   }
 );
+
+router.post('/add-line',
+  validatorHandler(addLineTeacherSchema, 'body'),
+  async (req, res,next) => {
+    try {
+      const body = req.body;
+      const newlineteacher = await service.create(body);
+      res.status(201).json(newlineteacher);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 
 router.patch('/:id',
   validatorHandler(getCategorySchema, 'params'),

@@ -24,12 +24,16 @@ class TeacherService {
   }
 
   async find() {
-    const rta = await models.Teacher.findAll();
+    const rta = await models.Teacher.findAll({
+      include:['user']
+    });
     return rta;
   }
 
   async findOne(id) {
-    const Teacher = await models.Teacher.findByPk(id);
+    const Teacher = await models.Teacher.findByPk(id,{
+      include:['user']
+    });
     if(!Teacher){
       throw boom.notFound('Teacher not found');
     }

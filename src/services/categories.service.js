@@ -10,16 +10,21 @@ class CategoryService {
     return newCategory;
   }
 
+  async addLine(data) {
+    const newlineteacher = await models.CategoryTeacher.create(data);
+    return newlineteacher;
+  }
+
   async find() {
     const categories = await models.Category.findAll({
-      include: ['teachers']
+      include: ['lineas']
     });
     return categories;
   }
 
   async findOne(id) {
     const category = await models.Category.findByPk(id,{
-      include: ['teachers']
+      include: ['lineas']
     });
     return category;
   }

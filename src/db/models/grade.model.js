@@ -25,11 +25,11 @@ const GradeSchema = {
 }
 
 class Grade extends Model{
-  static associate(models){
-    this.hasMany(models.Teacher,{
+  static associate(){
+    /*this.hasMany(models.Teacher,{
       as: 'teachers',
       foreignKey: 'gradeId'
-    });
+    });*/
   }
   static config(sequelize){
     return{
