@@ -1,0 +1,74 @@
+<!-- top navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-yellow bg-firstColor fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
+      aria-controls="offcanvasExample">
+      <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+    </button>
+    <a class="navbar-yellow me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#"><img src="/img/siprap.png" width="35px"
+        alt=""> SIPRAP</a>
+
+    <div id="topNavBar">
+      <ul class="navbar-nav">
+        <li>
+          <a class="nav-link ms-2">
+            <ion-icon name="log-out-outline"></ion-icon>
+            Cerrar Sesión
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- top navigation bar -->
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-start sidebar-nav bg-firstColor p-4" tabindex="-1" id="sidebar">
+  <div class="offcanvas-body p-0">
+    <nav class="navbar-dark">
+      <ul class="navbar-nav">
+        <li class="my-4">
+          <hr class="dropdown-divider bg-light" />
+        </li>
+        <li>
+          <a href="docenteMain" class="nav-link px-3 active">
+            <span class="me-2">
+              <ion-icon name="home-outline"></ion-icon>
+            </span>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="docentePerfil" class="nav-link px-3 active">
+            <span class="me-2">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span>Perfil</span>
+          </a>
+        </li>
+        <li class="my-4">
+          <hr class="dropdown-divider bg-light" />
+        </li>
+        <li>
+          <a href="borradorInformes" class="nav-link px-3">
+            <span class="me-2">
+              <ion-icon name="clipboard-outline"></ion-icon>
+            </span>
+            <span>Borrador de informes de prácticas</span>
+          </a>
+        </li>
+        <li class="my-4">
+          <hr class="dropdown-divider bg-light" />
+        </li>
+        <li>
+          <a href="docenteContacto" class="nav-link px-3">
+            <span class="me-2">
+              <ion-icon name="mail-outline"></ion-icon>
+            </span>
+            <span>Contacto</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- offcanvas -->

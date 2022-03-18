@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include ('partials/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include ('partials/docente.navbar.ejs') %>
+
+        <main class="mt-auto pt-1">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-10 mt-5 pt-5">
+                        <div class="row z-depth-3 rounded">
+                            <div class="col-sm-12 bg-white rounded-right ">
+                                <table class="table table-warning table-striped mt-3 me-2">
+                                    <thead>
+                                        <th scope="col">Titulo</th>
+                                        <th scope="col">Tiempo</th>
+                                        <th scope="col">Ver</th>
+                                        <th scope="col">Calificar</th>
+                                        <th scope="col"></th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Labore adipisci voluptatum, corrupti molestiae repellat amet accusantium
+                                                aspernatur quaerat repudiandae architecto assumenda, et maxime
+                                                voluptates nihil! Eius cum beatae praesentium facere.</th>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                                            <td><button class="btn">Abrir</button></td>
+                                            <td><input class="form-control" type="number" min="0" max="20"></td>
+                                            <td><button class="btn">Enviar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Labore adipisci voluptatum, corrupti molestiae repellat amet accusantium
+                                                aspernatur quaerat repudiandae architecto assumenda, et maxime
+                                                voluptates nihil! Eius cum beatae praesentium facere.</th>
+                                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                                            <td><button class="btn">Abrir</button></td>
+                                            <td><input class="form-control" type="number" min="0" max="20"></td>
+                                            <td><button class="btn">Enviar</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr class="bg-primary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

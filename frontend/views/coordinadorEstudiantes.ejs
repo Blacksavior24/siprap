@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%- include ('partials/head.ejs') %>
+
+</head>
+
+<body>
+  <%- include ('partials/coordinador.navbar.ejs') %>
+
+    <main class="mt-auto pt-1">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-10 mt-5 pt-5">
+            <div class="row z-depth-3 rounded">
+              <div class="col-sm-12 bg-white rounded-right ">
+                <table class="table table-warning table-striped mt-3 me-2">
+                  <thead>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Semestre</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="row">Alonso</td>
+                      <td scope="row">Galindo Rosales</td>
+                      <td scope="row">365478</td>
+                      <td scope="row">45879654</td>
+                      <td scope="row">987456324</td>
+                      <td scope="row">IX</td>
+                      <td><button class="btn"><ion-icon name="pencil-outline"></ion-icon></button></td>
+                      <td><button class="btn"><ion-icon name="trash-outline"></ion-icon></button></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Alonso</td>
+                      <td scope="row">Galindo Rosales</td>
+                      <td scope="row">365478</td>
+                      <td scope="row">45879654</td>
+                      <td scope="row">987456324</td>
+                      <td scope="row">X</td>
+                      <td><button class="btn"><ion-icon name="pencil-outline"></ion-icon></button></td>
+                      <td><button class="btn"><ion-icon name="trash-outline"></ion-icon></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <hr class="bg-primary">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="registrarDocente" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Registrar Docente</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="mb-3 row">
+                  <div class="col-sm-12">
+                    <input class="form-control" type="code" placeholder="Ingrese código de docente">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <div class="col-sm-12">
+                    <input class="form-control" type="email" placeholder="Ingrese correo del docente">
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <div class="col-sm-12">
+                    <input class="form-control" type="password" placeholder="Ingrese contraseña del docente">
+                  </div>
+                </div>
+                <button type="submit" class="btn text-white bg-thirdColor ms-auto ">Registrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include ('partials/footer.ejs') %>
+</body>
+
+</html>

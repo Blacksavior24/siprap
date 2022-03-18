@@ -38,14 +38,14 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'First Web Node' });
 });
 
-app.get('/main', (req, res) => {
+app.get('/estudianteMain', (req, res) => {
   console.log('nueva ruta');
-  res.render('main');
+  res.render('estudianteMain');
 });
 
-app.get('/profile', (req, res) => {
+app.get('/estudiantePerfil', (req, res) => {
   console.log('nueva ruta');
-  res.render('profile');
+  res.render('estudiantePerfil');
 });
 
 app.get('/lineasdeinvestigacion', (req, res) => {
@@ -68,12 +68,54 @@ app.get('/herramientas', (req, res) => {
   res.render('herramientas');
 });
 
+app.get('/estudianteContacto', (req, res) => {
+  console.log('nueva ruta');
+  res.render('estudianteContacto');
+});
+
 //DOCENTES
 
+app.get('/docenteMain', (req, res) => {
+  console.log('nueva ruta');
+  res.render('docenteMain');
+});
+
+app.get('/docentePerfil', (req, res) => {
+  console.log('nueva ruta');
+  res.render('docentePerfil');
+});
+
+app.get('/borradorInformes', (req, res) => {
+  console.log('nueva ruta');
+  res.render('borradorInformes');
+});
+
+app.get('/docenteContacto', (req, res) => {
+  console.log('nueva ruta');
+  res.render('docenteContacto');
+});
 
 //COORDINADOR
 
+app.get('/coordinadorMain', (req, res) => {
+  console.log('nueva ruta');
+  res.render('coordinadorMain');
+});
 
+app.get('/coordinadorInformes', (req, res) => {
+  console.log('nueva ruta');
+  res.render('coordinadorInformes');
+});
+
+app.get('/coordinadorDocentes', (req, res) => {
+  console.log('nueva ruta');
+  res.render('coordinadorDocentes');
+});
+
+app.get('/coordinadorEstudiantes', (req, res) => {
+  console.log('nueva ruta');
+  res.render('coordinadorEstudiantes');
+});
 
 routerApi(app);
 

@@ -59,8 +59,12 @@ button {
   background-color: var(--first-color-darken);
 }
 
-.nav-link, .navbar-yellow{
+.active, .navbar-yellow{
   color: var(--white-color) !important; 
+}
+
+.nav-link-white{
+  color: #FFF;
 }
 
 .active-yellow{
