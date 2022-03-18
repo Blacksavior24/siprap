@@ -13,7 +13,7 @@ const lastName = Joi.string();
 const dni = Joi.string();
 const role = Joi.string();
 const phone = Joi.string();
-const gradeId = Joi.number().integer()
+//const gradeId = Joi.number().integer()
 
 const getTeacherSchema = Joi.object({
   id: id.required(),
@@ -30,14 +30,14 @@ const createTeacherSchema = Joi.object({
       role: role.required(),
       phone,
   }),
-  gradeId
+  //gradeId
 });
   
 const updateTeacherSchema = Joi.object({
   contact,
   contact2,
   user: updateUserSchema,
-  gradeId
+  //gradeId
 });
   
 module.exports = { getTeacherSchema, createTeacherSchema, updateTeacherSchema };

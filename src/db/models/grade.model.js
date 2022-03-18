@@ -10,7 +10,10 @@ const GradeSchema = {
   },
   name:{
     type: DataTypes.STRING,
-    unique: true,
+    allowNull: false,
+  },
+  fecha:{
+    type: DataTypes.STRING,
     allowNull: false,
   },
   createdAt:{
@@ -22,11 +25,11 @@ const GradeSchema = {
 }
 
 class Grade extends Model{
-  static associate(models){
-    this.hasMany(models.Teacher,{
+  static associate(){
+    /*this.hasMany(models.Teacher,{
       as: 'teachers',
       foreignKey: 'gradeId'
-    });
+    });*/
   }
   static config(sequelize){
     return{

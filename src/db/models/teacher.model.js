@@ -36,7 +36,7 @@ const TeacherSchema = {
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
-  },
+  },/*
   gradeId:{
     field: 'grade_id',
     allowNull: false,
@@ -47,7 +47,7 @@ const TeacherSchema = {
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
-  }
+  }*/
 }
 
 class Teacher extends Model{
@@ -57,7 +57,7 @@ class Teacher extends Model{
         as: 'reports',
         foreignKey: 'teacherId'
     });
-    this.belongsTo(models.Grade, {as: 'grade'});
+    //this.belongsTo(models.Grade, {as: 'grade'});
   }
   static config(sequelize){
     return{
